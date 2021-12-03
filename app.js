@@ -2,9 +2,11 @@
 import { createCountString } from './utils.js';
 const dropDowns = document.querySelectorAll('select');
 const reportEl = document.querySelector('#report');
-const sloganEl = document.querySelector('input');
+const sloganEl = document.querySelector('#slogan');
 const addSloganButton = document.querySelector('button');
 const sloganHouse = document.querySelector('#sloganHouse');
+const cityName = document.querySelector('#city-name');
+const heading = document.querySelector('h3');
 
 // let state
 let tracker = {
@@ -13,13 +15,17 @@ let tracker = {
     castle: 0
 };
 
+let cityOptions = [{ display: '--Please choose an option--', value: '' }, { display: 'Seoul', value: 'seoul' }, { display: 'prague', value: 'Prague' }, { display: 'Paris', value: 'paris' }];
 const slogans = [];
+
+
 
 
 for (let dropDown of dropDowns) {
     dropDown.addEventListener('change', () => {
         let value = dropDown.value;
         let category = dropDown.name;
+
         tracker[category]++;
         let img = document.createElement('img');
         img.src = `./assets/${value}-${category}.jpg`;
@@ -29,7 +35,9 @@ for (let dropDown of dropDowns) {
 }
 
 addSloganButton.addEventListener('click', () => {
-    slogans.push(sloganEl.value);
+    slogans.push(`${cityName.value}: ${sloganEl.value}`);
+    heading.textContent = cityName.value.toUpperCase();
+    cityName.value = '';
     sloganEl.value = '';
     displaySlogans();
 });
@@ -50,6 +58,7 @@ function displayReport() {
 
 function displaySlogans() {
     sloganHouse.textContent = '';
+    cityName.textContent = '';
     for (let slogan of slogans) {
         let p = document.createElement('p');
         p.textContent = slogan;
