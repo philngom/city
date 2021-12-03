@@ -15,10 +15,25 @@ let tracker = {
     castle: 0
 };
 
-let cityOptions = [{ display: '--Please choose an option--', value: '' }, { display: 'Seoul', value: 'seoul' }, { display: 'prague', value: 'Prague' }, { display: 'Paris', value: 'paris' }];
+let dropDownItems = {
+    skyline: [{ display: '--Please choose an option--', value: '' }, { display: 'Seoul', value: 'seoul' }, { display: 'prague', value: 'prague' }, { display: 'Paris', value: 'paris' }],
+    waterfront: [{ display: '--Please choose an option--', value: '' }, { display: 'China', value: 'china' }, { display: 'brooklyn', value: 'Brooklyn' }, { display: 'ostend', value: 'Ostend' }],
+    castle: [{ display: '--Please choose an option--', value: '' }, { display: 'Neuschwanstein', value: 'neuschwanstein' }, { display: 'Japan', value: 'japan' }, { display: 'Hungary', value: 'hungary' }]
+};
+
 const slogans = [];
 
-
+window.addEventListener('load', () => {
+    for (let category in dropDownItems) {
+        for (let option of dropDownItems[category]) {
+            const op = document.createElement('option');
+            op.textContent = option.display;
+            op.value = option.value;
+            const el = document.querySelector(`#${category}-select`);
+            el.append(op);
+        }
+    }
+});
 
 
 for (let dropDown of dropDowns) {
