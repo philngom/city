@@ -17,7 +17,7 @@ let tracker = {
 
 let dropDownItems = {
     skyline: [{ display: '--Please choose an option--', value: '' }, { display: 'Seoul', value: 'seoul' }, { display: 'prague', value: 'prague' }, { display: 'Paris', value: 'paris' }],
-    waterfront: [{ display: '--Please choose an option--', value: '' }, { display: 'China', value: 'china' }, { display: 'brooklyn', value: 'Brooklyn' }, { display: 'ostend', value: 'Ostend' }],
+    waterfront: [{ display: '--Please choose an option--', value: '' }, { display: 'China', value: 'china' }, { display: 'Brooklyn', value: 'brooklyn' }, { display: 'Ostend', value: 'ostend' }],
     castle: [{ display: '--Please choose an option--', value: '' }, { display: 'Neuschwanstein', value: 'neuschwanstein' }, { display: 'Japan', value: 'japan' }, { display: 'Hungary', value: 'hungary' }]
 };
 
