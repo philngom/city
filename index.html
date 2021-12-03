@@ -24,21 +24,13 @@
             <div>
                 <label for="skyline-select">Skyline:</label>
                 <select name="skyline" id="skyline-select">
-                    <option value="">--Please choose an option--</option>
-                    <option value="seoul">Seoul</option>
-                    <option value="prague">Prague</option>
-                    <option value="paris">Paris</option>
                 </select>
                 <div class="img-container skyline">
                 </div>
             </div>
             <div>
                 <label for="waterfront-select">Water:</label>
-                <select name="waterfront">
-                    <option value="">--Please choose an option--</option>
-                    <option value="china">China</option>
-                    <option value="brooklyn">Brooklyn</option>
-                    <option value="belgium">Belgium</option>
+                <select name="waterfront" id="waterfront-select">
                 </select>
                 <div class="img-container waterfront">
                 </div>
@@ -46,10 +38,6 @@
             <div>
                 <label for="castle-select">Castle:</label>
                 <select name="castle" id="castle-select">
-                    <option value="">--Please choose an option--</option>
-                    <option value="neuschwanstein">Neuschwanstein</option>
-                    <option value="japan">Japan Castle</option>
-                    <option value="hungary">Hungary</option>
                 </select>
                 <div class="img-container castle">
                 </div>
@@ -58,8 +46,10 @@
         <div id="report">
         </div>
         <div id="slogans">
+            <label for="city-name">Name of city:</label>
+            <input type="text" id="city-name">
             <label for="slogan">Add a slogan here:</label>
-            <input type="text">
+            <input type="text" id="slogan">
             <button>Submit</button>
             <div id="sloganHouse"></div>
         </div>
