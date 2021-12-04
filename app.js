@@ -3,10 +3,10 @@ import { createCountString } from './utils.js';
 const dropDowns = document.querySelectorAll('select');
 const reportEl = document.querySelector('#report');
 const sloganEl = document.querySelector('#slogan');
-const addSloganButton = document.querySelector('button');
 const sloganHouse = document.querySelector('#sloganHouse');
 const cityName = document.querySelector('#city-name');
 const heading = document.querySelector('h3');
+const form = document.querySelector('#myForm');
 
 // let state
 let tracker = {
@@ -15,6 +15,7 @@ let tracker = {
     castle: 0
 };
 
+//drop down items to be loaded
 let dropDownItems = {
     skyline: [{ display: '--Please choose an option--', value: '' }, { display: 'Seoul', value: 'seoul' }, { display: 'prague', value: 'prague' }, { display: 'Paris', value: 'paris' }],
     waterfront: [{ display: '--Please choose an option--', value: '' }, { display: 'China', value: 'china' }, { display: 'Brooklyn', value: 'brooklyn' }, { display: 'Ostend', value: 'ostend' }],
@@ -23,6 +24,7 @@ let dropDownItems = {
 
 const slogans = [];
 
+//dynamically adds drop down items when page loads
 window.addEventListener('load', () => {
     for (let category in dropDownItems) {
         for (let option of dropDownItems[category]) {
@@ -49,7 +51,8 @@ for (let dropDown of dropDowns) {
     });
 }
 
-addSloganButton.addEventListener('click', () => {
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
     slogans.push(`${cityName.value}: ${sloganEl.value}`);
     heading.textContent = cityName.value.toUpperCase();
     cityName.value = '';
